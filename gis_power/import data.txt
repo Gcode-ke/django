@@ -1,0 +1,56 @@
+maps_shp = os.path.abspath(os.path.join(os.path.dirname(maps.__file__), 'data', 'Urban_plot_point.shp'))
+
+from django.contrib.gis.gdal import DataSource
+
+ds = DataSource(maps_shp)
+
+print(ds)
+
+print(len(ds))
+
+lyr = ds[0]
+
+print(lyr)
+
+print(lyr.geom_type)
+
+print(len(lyr))
+
+srs = lyr.srs
+
+import os
+from django.contrib.gis.utils import LayerMapping
+from .models import WorldBorder
+
+
+
+shp2pgsql -s 4326 maps/data/Secondary_substation.shp Secondary_substation postgres > Secondary_substation.sql
+
+
+python manage.py ogrinspect maps/data/Urban_plot_point.shp Urban_plot_point\--srid=4326 --mapping --multi
+python manage.py ogrinspect maps/data/Urban_plot_point.shp Urban_plot_point\--srid=4326 --mapping --multi
+python manage.py ogrinspect maps/data/Urban_plot_point.shp Urban_plot_point\--srid=4326 --mapping --multi
+python manage.py ogrinspect maps/data/Urban_plot_point.shp Urban_plot_point\--srid=4326 --mapping --multi
+python manage.py ogrinspect maps/data/Urban_plot_point.shp Urban_plot_point\--srid=4326 --mapping --multi
+python manage.py ogrinspect maps/data/Urban_plot_point.shp Urban_plot_point\--srid=4326 --mapping --multi
+python manage.py ogrinspect maps/data/Urban_plot_point.shp Urban_plot_point\--srid=4326 --mapping --multi
+
+
+python manage.py ogrinspect maps/data/Urban_plot_point.shp Urban_plot_point\--srid=4326 --mapping --multi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
